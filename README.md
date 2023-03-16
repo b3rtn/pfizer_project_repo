@@ -9,12 +9,11 @@ This is a Python script that checks for changes in WHOIS data for a list of doma
 ## Usage
 
 1. Clone this repository to your local machine.
-2. Install the required packages by running `pip install -r requirements.txt` in your terminal.
-3. In`constants.py`file , replace the placeholders with your own values.
-4. You'll need to obtain an API key from https://whois.whoisxmlapi.com/.
-5. Edit the `DOMAINS` list in `constants.py` to include the domains you want to check.
-6. Run the `check_changes()` method in the `WhoisChangeChecker` class to start the script.
-7. The script will run continuously, checking for changes every 24 hours . If any changes are found, the script will create a JSON file with the changed results, and send an email with the JSON file attached.
+2. In`constants.py`file , replace the placeholders with your own values.
+3. You'll need to obtain an API key from https://whois.whoisxmlapi.com/.
+4. Edit the `DOMAINS` list in `constants.py` to include the domains you want to check.
+5. Run the `check_changes()` method in the `WhoisChangeChecker` class to start the script.
+6. The script will run continuously, checking for changes every 24 hours . If any changes are found, the script will create a JSON file with the changed results, and send an email with the JSON file attached.
 
 ## Classes
 
