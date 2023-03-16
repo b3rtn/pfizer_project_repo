@@ -90,7 +90,7 @@ class WhoisChangeChecker:
             self.previous_results = results
             print("[+] Waiting for the next check... go outside")
             # time sleep that defines how much time is going to be checked again 
-            time.sleep(30)
+            time.sleep(86400)
 
 checker = WhoisChangeChecker(DOMAINS)
 checker.check_changes()
