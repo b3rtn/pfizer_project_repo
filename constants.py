@@ -2,10 +2,10 @@
 #constants file 
 #all variables are going to be here 
 
-email_sender = 'bertin.pfizer.project@gmail.com'
-email_password = 'lwhexftucujvhqzu'
-email_receiver = 'bertinbervis@gmail.com'
-API_KEY = "at_krodSXwlOfCGfjOk0dWeYauUWK95K"
+email_sender = ''
+email_password = ''
+email_receiver = ''
+API_KEY = ""
 subject = 'WHOIS Results Update'
 body = """
 The WHOIS results have been updated. Please see the attached JSON file for details.
