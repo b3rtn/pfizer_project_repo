@@ -13,34 +13,32 @@ class WhoisAPI:
         self.domain = domain
         
     def query_api(self):
-	# API request , the API KEY is located in constants.py file 
+		# API request , the API KEY is located in constants.py file 
         print("[+] Querying the API")
         url = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={API_KEY}&domainName={self.domain}&outputFormat=JSON"
         response = requests.get(url)
         return response.json()
 
     def parse_data(self, whois_data):
-        print("[+] Parsing the Data")
-        # Parsing CreatedDate, UpdatedDate, ExpiresDate
-        audit = whois_data['WhoisRecord']['audit']
-        created_date = audit.get('createdDate', None)
-        updated_date = audit.get('updatedDate', None)
-        record = whois_data['WhoisRecord']
-        created_date = record.get('createdDate', created_date)
-        updated_date = record.get('updatedDate', updated_date)
-        expires_date = record.get('expiresDate', None)
-        email = record.get('contactEmail', None)
-        domain = record.get('domainName', None)
-        result = {
-            'domain': domain,
-            'created_date': created_date,
-            'updated_date': updated_date,
-            'expires_date': expires_date,
-            'email': email
-        }
-        print(json.dumps(result))
-        return result
-
+        try:
+            print("[+] Parsing the Data")
+            # Parsing CreatedDate, UpdatedDate, ExpiresDate
+            audit = whois_data['WhoisRecord']['audit']
+            created_date = audit.get('createdDate', None)
+            updated_date = audit.get('updatedDate', None)
+            record = whois_data['WhoisRecord']
+            created_date = record.get('createdDate', created_date)
+            updated_date = record.get('updatedDate', updated_date)
+            expires_date = record.get('expiresDate', None)
+            email = record.get('contactEmail', None)
+            domain = record.get('domainName', None)
+            result = {'domain': domain,'created_date': created_date,'updated_date': updated_date,'expires_date': expires_date,'email': email}
+            print(json.dumps(result))
+            return result
+        except Error as e:
+            print("Something wrong")
+			
+			
 class WhoisChangeChecker:
     def __init__(self, domains):
         self.domains = domains
@@ -90,7 +88,7 @@ class WhoisChangeChecker:
             self.previous_results = results
             print("[+] Waiting for the next check... go outside")
             # time sleep that defines how much time is going to be checked again 
-            time.sleep(86400)
+            time.sleep(30)
 
 checker = WhoisChangeChecker(DOMAINS)
 checker.check_changes()
