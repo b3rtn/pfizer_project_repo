@@ -4,7 +4,7 @@ Repository for pfizer project
 
 # Whois Change Checker
 
-This is a Python script that checks for changes in WHOIS data for a list of domains, and sends an email with the changes if any are found.
+This is a modular Python script that checks for changes in WHOIS data for a list of domains, and sends an email with the changes if any are found.
 
 ## Usage
 
@@ -28,7 +28,7 @@ This class handles querying the WHOIS API for a single domain, and parsing the r
 
 This class handles checking for changes in WHOIS data for a list of domains, and sending an email if any changes are found. It has one method:
 
-- `check_changes()`: Runs the script continuously, checking for changes every 30 seconds. If any changes are found, the script will create a JSON file with the changed results, and send an email with the JSON file attached.
+- `check_changes()`: Runs the script continuously, checking for changes every 24 hours. If any changes are found, the script will create a JSON file with the changed results, and send an email with the JSON file attached.
 
 ## License
 
