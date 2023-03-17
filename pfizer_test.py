@@ -13,11 +13,14 @@ class WhoisAPI:
         self.domain = domain
         
     def query_api(self):
-        # API request , the API KEY is located in constants.py file 
-        print("[+] Querying the API")
-        url = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={API_KEY}&domainName={self.domain}&outputFormat=JSON"
-        response = requests.get(url)
-        return response.json()
+        try:
+            # API request , the API KEY is located in constants.py file 
+            print("[+] Querying the API")
+            url = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={API_KEY}&domainName={self.domain}&outputFormat=JSON"
+            response = requests.get(url)
+            return response.json()
+        except Error as e:
+            print("If this fails is because you're running out of credits in API Key, get a new API key")
 
     def parse_data(self, whois_data):
         try:
@@ -45,7 +48,7 @@ class WhoisChangeChecker:
         self.previous_results = None
         
     def check_changes(self):
-        #Function to check the changes in While loop  
+		#Function to check the changes in While loop  
         print("[+] Checking Changes")
         while True:
             results = []
@@ -61,6 +64,7 @@ class WhoisChangeChecker:
                     previous_result = self.previous_results[i]
                     if result['created_date'] != previous_result['created_date'] or result['updated_date'] != previous_result['updated_date'] or result['expires_date'] != previous_result['expires_date'] or result['email'] != previous_result['email']:
                         print(f"{result['domain']} CHANGED!")
+                        print(f"Email sent to {email_receiver}!")
                         changed_domains.append(result['domain'])
                         
                 if changed_domains:
