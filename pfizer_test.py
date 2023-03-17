@@ -13,7 +13,7 @@ class WhoisAPI:
         self.domain = domain
         
     def query_api(self):
-		# API request , the API KEY is located in constants.py file 
+        # API request , the API KEY is located in constants.py file 
         print("[+] Querying the API")
         url = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={API_KEY}&domainName={self.domain}&outputFormat=JSON"
         response = requests.get(url)
@@ -45,7 +45,7 @@ class WhoisChangeChecker:
         self.previous_results = None
         
     def check_changes(self):
-		#Function to check the changes in While loop  
+        #Function to check the changes in While loop  
         print("[+] Checking Changes")
         while True:
             results = []
