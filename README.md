@@ -30,6 +30,11 @@ This class handles checking for changes in WHOIS data for a list of domains, and
 
 - `check_changes()`: Runs the script continuously, checking for changes every 24 hours. If any changes are found, the script will create a JSON file with the changed results, and send an email with the JSON file attached.
 
+Usage / output : 
+
+![image](https://user-images.githubusercontent.com/106857050/225811005-217f901e-c07c-40d8-ad1b-4b9ee8ce1927.png)
+
+
 ## License
 
 This script is licensed under the MIT License. See the `LICENSE` file for details.
