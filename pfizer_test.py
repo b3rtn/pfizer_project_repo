@@ -13,7 +13,7 @@ class WhoisAPI:
         self.domain = domain
         
     def query_api(self):
-		# API request , the API KEY is located in constants.py file 
+	# API request , the API KEY is located in constants.py file 
         print("[+] Querying the API")
         url = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={API_KEY}&domainName={self.domain}&outputFormat=JSON"
         response = requests.get(url)
