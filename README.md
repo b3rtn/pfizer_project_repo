@@ -45,7 +45,7 @@ The project has the following files:
 Dockerfile: Defines the Docker container and its configurations.
 requirements.txt: Lists the required Python packages to be installed in the container.
 pfizer_test.py: The main Python script to be executed inside the container.
-constants.py: A separate Python file containing constant values used by 
+constants.py: A separate Python file containing constant values used by pfizer_test.py.
 
 
 ## License
