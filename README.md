@@ -48,6 +48,17 @@ pfizer_test.py: The main Python script to be executed inside the container.
 constants.py: A separate Python file containing constant values used by pfizer_test.py.
 
 
+In order to run the Docker container  please download the pfizer_directory.rar file and unrar. 
+
+Inside the directory run the command docker build -t pfizer_docker .
+
+![image](https://user-images.githubusercontent.com/106857050/226219508-865fd982-d8df-48b7-91a0-9fa2c60e3d5f.png)
+
+In order to run the container run the command docker run pfizer_docker. 
+
+
+
+
 ## License
 
 This script is licensed under the MIT License. See the `LICENSE` file for details.
